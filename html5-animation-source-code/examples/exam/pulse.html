@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pulse</title>
+    <script src="assets/ball.js"></script>
+    <link rel="stylesheet" href="./assets/main.css" />
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400">
+        <p>不支持canvas</p>
+    </canvas>
+    <script>
+        window.onload = function() {
+          const canvas = document.getElementById('myCanvas'),
+                context = canvas.getContext('2d'),
+                ball = new Ball(),
+                defaultScale = 1,
+                range = 0.5,
+                speed = 0.05;
+          let radian = 0;
+
+          ball.x = canvas.width / 2;
+          ball.y = canvas.width / 2;
+
+            (function drawFrame() {
+                window.requestAnimationFrame(drawFrame);
+                context.clearRect(0, 0, canvas.width, canvas.height);
+
+                ball.scaleX = ball.scaleY = defaultScale + Math.sin(radian) * range;
+                radian += speed;
+                ball.draw(context);
+            }())
+        };
+    </script>
+</body>
+</html>
