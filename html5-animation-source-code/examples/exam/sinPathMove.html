@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sinPathMove</title>
+    <style>
+        #myCanvas{
+            background-color: #0ff;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400">
+    <p>不支持canvas</p>
+</canvas>
+<script>
+    function Ball(color='#ff0', lineWidth=1) {
+        this.x = 0;
+        this.y = 0;
+        this.color = color;
+        this.lineWidth = lineWidth;
+        this.radius = 40;
+    }
+
+    Ball.prototype.draw = function(context) {
+        context.save();
+        context.fillStyle = this.color;
+        context.lineWidth = this.lineWidth;
+        context.beginPath();
+        context.translate(this.x, this.y);
+        context.arc(0, 0, this.radius, 0, Math.PI * 2, true);
+        context.fill();
+        context.stroke();
+        context.restore();
+    };
+
+    window.onload = function() {
+          const domCanvas = document.getElementById('myCanvas');
+          const context = domCanvas.getContext('2d');
+          const ball = new Ball();
+          let radian = 0;
+
+        (function drawFrame() {
+            const testId = window.requestAnimationFrame(drawFrame);
+            context.clearRect(0, 0, domCanvas.width, domCanvas.height);
+            ball.x = domCanvas.width / 2;
+            ball.y = domCanvas.height / 2 + Math.sin(radian) * 50;
+            ball.draw(context);
+            radian += 0.1;
+        }())
+
+    };
+</script>
+</body>
+</html>
