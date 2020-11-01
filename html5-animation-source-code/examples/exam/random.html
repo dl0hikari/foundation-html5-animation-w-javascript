@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>random</title>
+    <script src="./assets/ball.js"></script>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="500">
+    <p>不支持canvas</p>
+</canvas>
+<script>
+    window.onload = function () {
+        let canvas = document.getElementById('myCanvas'),
+            context = canvas.getContext('2d'),
+            ball = new Ball(),
+            radianX = 0,
+            radianY = 0,
+            range = 50,
+            centerX = canvas.width / 2,
+            centerY = canvas.height / 2,
+            xSpeed = 0.07,
+            ySpeed = 0.11;
+
+        (function drawFrame(){
+           window.requestAnimationFrame(drawFrame);
+           context.clearRect(0, 0, canvas.width, canvas.height);
+
+           ball.x = centerX + Math.sin(radianX) * range;
+           ball.y = centerY + Math.sin(radianY) * range;
+
+           radianX += xSpeed;
+           radianY += ySpeed;
+
+           ball.draw(context);
+        }())
+
+    };
+</script>
+</body>
+</html>

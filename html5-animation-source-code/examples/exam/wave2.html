@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wave2</title>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400">
+        <p>不支持canvas</p>
+    </canvas>
+    <script>
+        window.onload = function (){
+          const canvas = document.getElementById('myCanvas'),
+              context = canvas.getContext('2d'),
+              xSpeed = 1,
+              ySpeed = 0.05,
+              range = 50,
+              centerY = canvas.height / 2;
+          let xPos = 0,
+              radian = 0,
+              yPos = centerY;
+
+            (function drawFrame(){
+                  window.requestAnimationFrame(drawFrame);
+
+                  context.beginPath();
+                  context.moveTo(xPos, yPos);
+                  xPos += xSpeed;
+                  radian += ySpeed;
+                  yPos = centerY + Math.sin(radian) * range;
+                  context.lineTo(xPos, yPos);
+                  context.closePath();
+                  context.stroke();
+            }())
+        };
+    </script>
+</body>
+</html>
