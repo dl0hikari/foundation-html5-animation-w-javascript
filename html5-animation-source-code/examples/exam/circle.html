@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circle</title>
+    <link rel="stylesheet" href="./assets/main.css">
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400">
+    <p>不支持canvas</p>
+</canvas>
+<script>
+    window.onload = function () {
+        const canvas = document.getElementById('myCanvas'),
+            context = canvas.getContext('2d'),
+            centerX = canvas.width / 2,
+            centerY = canvas.height / 2,
+            radius = 50,
+            speed = 0.05;
+        let xPos = centerX + radius,
+            yPos = centerY,
+            radian = 0,
+            num = 1;
+
+        (function drawFrame() {
+            window.requestAnimationFrame(drawFrame);
+            context.beginPath();
+            context.moveTo(xPos, yPos);
+            xPos = centerX + radius * Math.cos(radian);
+            yPos = centerY + radius * Math.sin(radian);
+            radian += speed;
+            context.lineTo(xPos, yPos);
+            context.stroke()
+            context.restore();
+        }())
+    };
+</script>
+</body>
+</html>
