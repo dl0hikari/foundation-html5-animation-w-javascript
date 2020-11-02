@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>draw</title>
+    <link rel="stylesheet" href="./assets/main.css"/>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400">
+    <p>不支持canvas</p>
+</canvas>
+<script>
+    function mouseCapture(dom) {
+        const mouse = {
+            x: 0,
+            y: 0
+        }
+
+        dom.addEventListener('mousemove', function (e) {
+            const event = e || window.event,
+                bodyScrollLeft = document.body.scrollLeft,
+                bodyScrollTop = document.body.scrollTop,
+                docElementLeft = document.documentElement.scrollLeft,
+                docElementTop = document.documentElement.scrollTop
+
+            let x, y;
+
+            if (e.pageX) {
+                x = event.pageX;
+                y = event.pageY;
+            } else {
+                x = event.clientX + bodyScrollLeft + docElementLeft;
+                y = event.clientY + bodyScrollTop + docElementTop;
+            }
+
+            mouse.x = x - dom.offsetLeft;
+            mouse.y = y - dom.offsetTop;
+        }, false);
+
+        return mouse;
+    }
+
+    window.onload = function () {
+        const canvas = document.getElementById('myCanvas'),
+            context = canvas.getContext('2d'),
+            mouse = mouseCapture(canvas);
+
+        canvas.addEventListener('mousedown', function() {
+            context.beginPath();
+            context.moveTo(mouse.x, mouse.y);
+            canvas.addEventListener('mousemove', onMouseMove, false);
+        }, false);
+
+        canvas.addEventListener('mouseup', function (){
+            canvas.removeEventListener('mousemove', onMouseMove, false);
+        }, false)
+
+        function onMouseMove() {
+            context.lineTo(mouse.x, mouse.y);
+            context.stroke();
+        }
+    };
+</script>
+</body>
+</html>
