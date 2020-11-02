@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./assets/main.css"/>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400">
+    <p>不支持canvas</p>
+</canvas>
+<div id="distance"></div>
+<script>
+
+    function mouseCapture(targetDom) {
+        const mouse = {
+            x: 0,
+            y: 0
+        }
+
+        targetDom.addEventListener('mousemove', function(e) {
+            const event = e || window.event,
+                bodyScrollLeft = document.body.scrollLeft,
+                bodyScrollTop = document.body.scrollTop,
+                documentElementScrollLeft = document.documentElement.scrollLeft,
+                documentElementScrollTop = document.documentElement.scrollTop;
+            let xPos, yPos;
+            if(event.pageX) {
+                xPos = event.pageX;
+                yPos = event.pageY;
+            } else {
+                xPos = event.clientX + bodyScrollLeft + documentElementScrollLeft;
+                yPos = event.clientY + bodyScrollTop + documentElementScrollTop;
+            }
+
+            mouse.x = xPos - targetDom.offsetLeft;
+            mouse.y = yPos - targetDom.offsetTop;
+        });
+
+        return mouse;
+    }
+
+    window.onload = function () {
+        const canvas = document.getElementById('myCanvas'),
+            context = canvas.getContext('2d'),
+            objDistance = document.getElementById('distance'),
+            centerX = canvas.width / 2,
+            centerY = canvas.height / 2,
+            mouse = mouseCapture(canvas);
+        let distance = 0;
+
+        (function drawFrame(){
+            window.requestAnimationFrame(drawFrame);
+            console.log(mouse)
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.save();
+            context.strokeStyle = '#000000';
+            context.beginPath();
+            context.moveTo(centerX, centerY);
+            context.lineTo(mouse.x, mouse.y);
+            context.stroke();
+            context.restore();
+
+            distance = Math.sqrt(Math.pow(centerX - mouse.x, 2) + Math.pow(centerY - mouse.y, 2));
+            objDistance.innerHTML = distance.toString();
+        }())
+    };
+</script>
+</body>
+</html>
