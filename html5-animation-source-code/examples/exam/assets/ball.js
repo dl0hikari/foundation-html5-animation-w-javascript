@@ -1,9 +1,9 @@
-function Ball(color='#ff0', lineWidth=1) {
+function Ball(radius= 40, color='#ff0', lineWidth=1) {
     this.x = 0;
     this.y = 0;
     this.color = color;
     this.lineWidth = lineWidth;
-    this.radius = 40;
+    this.radius = radius;
     this.rotation = 0;
     this.scaleX = 1;
     this.scaleY = 1;
