@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FollowMoust</title>
+    <script src="./assets/arrow.js"></script>
+    <script src="./assets/utils.js"></script>
+    <link rel="stylesheet" href="./assets/main.css"/>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400">
+    <p>不支持canvas</p>
+</canvas>
+<script>
+    window.onload = function () {
+        const canvas = document.getElementById('myCanvas'),
+            context = canvas.getContext('2d'),
+            mouse = mouseCapture(canvas),
+            arrow = new Arrow();
+
+        let vx = 0,
+            vy = 0,
+            force = 0.05;
+
+        (function drawFrame() {
+            window.requestAnimationFrame(drawFrame);
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            const dy = mouse.y - arrow.y,
+                dx = mouse.x - arrow.x,
+                angle = Math.atan2(dy, dx),
+                ax = Math.cos(angle) * force,
+                ay = Math.sign(angle) * force;
+            vx += ax;
+            vy += ay;
+            arrow.rotation = angle;
+            arrow.x += vx;
+            arrow.y += vy;
+            arrow.draw(context);
+        }())
+
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ship</title>
+    <script src="../ch05/classes/ship.js"></script>
+    <script src="./assets/utils.js"></script>
+    <link rel="stylesheet" href="./assets/main.css"/>
+</head>
+<body>
+<canvas id="canvas" class="Space" width="400" height="400">
+    <p>不支持canvas</p>
+</canvas>
+<script>
+    window.onload = function () {
+        const canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d'),
+            ship = new Ship();
+
+        let vx = 0,
+            vy = 0,
+            ax = 0,
+            ay = 0,
+            vr = 0,
+            thrust = 0;
+
+        ship.x = canvas.width / 2;
+        ship.y = canvas.height / 2;
+
+        window.addEventListener('keydown', function(e) {
+            const event = e || window.event;
+
+            switch (event.keyCode) {
+                case 37:  // left
+                    vr = -3;
+                    break;
+                case 39: // right
+                    vr = 3;
+                    break;
+                case 38: // up
+                    thrust = 0.05;
+                    ship.showFlame = true;
+                    break;
+                case 40: // down
+                    break;
+            }
+        }, false);
+
+        window.addEventListener('keyup', function() {
+            thrust = 0;
+            vr = 0;
+            ship.showFlame = false;
+        }, false);
+
+        (function drawFrame() {
+            window.requestAnimationFrame(drawFrame);
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            ship.rotation += vr * Math.PI / 180;
+            const angle = ship.rotation;
+
+            ax = Math.cos(angle) * thrust;
+            ay = Math.sin(angle) * thrust;
+
+            vx += ax;
+            vy += ay;
+
+            ship.x += vx;
+            ship.y += vy;
+
+            ship.draw(context);
+        }())
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gravity</title>
+    <script src="./assets/ball.js"></script>
+    <script src="./assets/utils.js"></script>
+    <link rel="stylesheet" href="./assets/main.css"/>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400">
+    <p>不支持canvas</p>
+</canvas>
+<script>
+    window.onload = function () {
+        const canvas = document.getElementById('myCanvas'),
+            context = canvas.getContext('2d'),
+            ball = new Ball(),
+            gravity = 0.01;
+        let ax = 0,
+            ay = 0,
+            vx = 0,
+            vy = 0;
+
+        ball.x = canvas.width / 2;
+        ball.y = canvas.width / 2;
+
+        window.addEventListener('keydown', function (e) {
+            const event = e || window.event;
+            switch (event.keyCode) {
+                case 37:
+                    ax = -0.1;
+                    break;
+                case 39:
+                    ax = 0.1;
+                    break;
+                case 38:
+                    ay = -0.1;
+                    break;
+                case 40:
+                    ay = 0.1;
+                    break;
+            }
+        }, false);
+
+        window.addEventListener('keyup', function(e) {
+            const event = e || window.event;
+            ax = 0;
+            ay = 0;
+        }, false);
+
+        (function drawFrame() {
+            window.requestAnimationFrame(drawFrame);
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            vx += ax;
+            vy += ay;
+            vy += gravity;
+            ball.x += vx;
+            ball.y += vy;
+            ball.draw(context);
+        }())
+    };
+</script>
+</body>
+</html>
