@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>multiCurve</title>
+    <link rel="stylesheet" href="./assets/main.css"/>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400">
+    <p>不支持canvas</p>
+</canvas>
+<script>
+    window.onload = function () {
+        const canvas = document.getElementById('myCanvas'),
+            context = canvas.getContext('2d'),
+            num = 9,
+            ctrlPoint = {}
+
+        let points = []
+
+        for(let i=0; i<num; i++) {
+            points.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height
+            })
+        }
+
+        // move to the first point
+        context.beginPath();
+        context.moveTo(points[0].x, points[0].y);
+
+        // curve through the rest, stopping at each midpoint
+        for(let i=1; i< num - 2; i++) {
+            ctrlPoint.x = (points[i].x + points[i+1].x) / 2;
+            ctrlPoint.y = (points[i].y + points[i+1].y) / 2;
+            context.quadraticCurveTo(points[i].x, points[i].y, ctrlPoint.x, ctrlPoint.y);
+        }
+
+        // curve through the last two point
+        context.quadraticCurveTo(points[num-2].x, points[num-2].y, points[num-1].x, points[num-1].y);
+        context.stroke();
+    };
+</script>
+</body>
+</html>
