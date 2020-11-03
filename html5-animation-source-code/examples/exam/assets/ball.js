@@ -7,6 +7,11 @@ function Ball(radius= 40, color='#ff0', lineWidth=1) {
     this.rotation = 0;
     this.scaleX = 1;
     this.scaleY = 1;
+    this.vx = 0;
+    this.vy = 0;
+    this.angle = 0;
+    this.ax = 0;
+    this.ay = 0;
 }
 
 Ball.prototype.draw = function(context) {

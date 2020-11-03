@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Removal</title>
+    <script src="./assets/ball.js"></script>
+    <link rel="stylesheet" href="./assets/main.css"/>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="400">
+    <p>不支持canvas</p>
+</canvas>
+<script>
+    window.onload = function () {
+        const canvas = document.getElementById('myCanvas'),
+            context = canvas.getContext('2d'),
+            balls = [],
+            accelaration = 0.01;
+
+        for (let i = 0; i < 10; i++) {
+            const ball = new Ball(10);
+            ball.x = Math.random() * canvas.width;
+            ball.y = Math.random() * canvas.height;
+            ball.angle = Math.atan2(ball.y, ball.x);
+            ball.ax = Math.cos(ball.angle) * accelaration;
+            ball.ay = Math.sin(ball.angle) * accelaration;
+            balls.push(ball);
+        }
+
+        function checkBoundary(ball) {
+            if (ball.x > ball.radius + canvas.width ||
+                ball.x < - ball.radius ||
+                ball.y > ball.radius + canvas.height ||
+                ball.y < - ball.radius) return true;
+            return false;
+        }
+
+        (function drawFrame() {
+            window.requestAnimationFrame(drawFrame);
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            for(let i=0; i<balls.length; i++) {
+                if(checkBoundary(balls[i])) {
+                    balls.splice(i, 1);
+                    i--;
+                    continue;
+                }
+                balls[i].vx += balls[i].ax;
+                balls[i].vy += balls[i].ay;
+                balls[i].x += balls[i].vx;
+                balls[i].y += balls[i].vy;
+                balls[i].draw(context);
+            }
+            console.log(balls)
+        }());
+    };
+</script>
+</body>
+</html>
