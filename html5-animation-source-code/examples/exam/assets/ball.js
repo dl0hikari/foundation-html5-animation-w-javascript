@@ -1,17 +1,14 @@
 function Ball(radius= 40, color='#ff0', lineWidth=1) {
     this.x = 0;
     this.y = 0;
-    this.color = color;
-    this.lineWidth = lineWidth;
-    this.radius = radius;
-    this.rotation = 0;
-    this.scaleX = 1;
-    this.scaleY = 1;
     this.vx = 0;
     this.vy = 0;
-    this.angle = 0;
-    this.ax = 0;
-    this.ay = 0;
+    this.radius = radius;
+    this.lineWidth = lineWidth;
+    this.color = color;
+    this.scaleX = 1;
+    this.scaleY = 1;
+    this.rotation = 0;
 }
 
 Ball.prototype.draw = function(context) {
@@ -20,10 +17,13 @@ Ball.prototype.draw = function(context) {
     context.rotate(this.rotation);
     context.scale(this.scaleX, this.scaleY);
 
-    context.fillStyle = this.color;
     context.lineWidth = this.lineWidth;
+    context.fillStyle = this.color;
+
     context.beginPath();
     context.arc(0, 0, this.radius, 0, Math.PI * 2, true);
+    context.closePath();
+
     context.fill();
     context.stroke();
     context.restore();

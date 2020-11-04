@@ -15,42 +15,36 @@
         const canvas = document.getElementById('myCanvas'),
             context = canvas.getContext('2d'),
             balls = [],
-            accelaration = 0.01;
+            ballsNum = 10;
 
-        for (let i = 0; i < 10; i++) {
-            const ball = new Ball(10);
+        for (let i = 0; i < ballsNum; i++) {
+            const ball = new Ball(20);
             ball.x = Math.random() * canvas.width;
             ball.y = Math.random() * canvas.height;
-            ball.angle = Math.atan2(ball.y, ball.x);
-            ball.ax = Math.cos(ball.angle) * accelaration;
-            ball.ay = Math.sin(ball.angle) * accelaration;
+            ball.vx = Math.random() * 2 - 1;
+            ball.vy = Math.random() * 2 - 1;
             balls.push(ball);
         }
 
-        function checkBoundary(ball) {
-            if (ball.x > ball.radius + canvas.width ||
-                ball.x < - ball.radius ||
-                ball.y > ball.radius + canvas.height ||
-                ball.y < - ball.radius) return true;
-            return false;
+        function draw (ball, pos) {
+            ball.x += ball.vx;
+            ball.y += ball.vy;
+
+            if (ball.x - ball.radius > canvas.width ||
+                ball.x + ball.radius < 0 ||
+                ball.y - ball.radius > canvas.height ||
+                ball.y + ball.radius < 0) balls.splice(pos, 1);
+
+            ball.draw(context);
         }
 
         (function drawFrame() {
             window.requestAnimationFrame(drawFrame);
             context.clearRect(0, 0, canvas.width, canvas.height);
-            for(let i=0; i<balls.length; i++) {
-                if(checkBoundary(balls[i])) {
-                    balls.splice(i, 1);
-                    i--;
-                    continue;
-                }
-                balls[i].vx += balls[i].ax;
-                balls[i].vy += balls[i].ay;
-                balls[i].x += balls[i].vx;
-                balls[i].y += balls[i].vy;
-                balls[i].draw(context);
+            let i = balls.length;
+            while (i--) {
+                draw(balls[i], i);
             }
-            console.log(balls)
         }());
     };
 </script>
