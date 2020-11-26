@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bb8419a-a390-491f-882e-6be4e3960fb0" name="Default Changelist" comment="" />
+    <list default="true" id="e02e03b2-3f60-47d6-92c7-66fe359e2ffc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/src/Lib/utils/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/src/Pages/Index/style.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5-animation-source-code/animation-react/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5-animation-source-code/animation-react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5-animation-source-code/animation-react/src/Pages/Index/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/src/Pages/Index/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html5-animation-source-code/animation-react/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,15 +19,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1jdHvdcu36mBuPJCs9bifMiLfQh" />
+  <component name="ProjectId" id="1ji8jueKpkQbY0d4DLuMfgvppLr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -54,153 +39,138 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-map-project" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-assess" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="D:\projects\foundation-html5-animation-w-javascript\html5-animation-source-code\animation-react\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\projects\foundation-html5-animation-w-javascript\html5-animation-source-code\examples" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\projects\foundation-html5-animation-w-javascript\html5-animation-source-code\examples\exam\assets" />
-      <recent name="E:\projects\foundation-html5-animation-w-javascript\html5-animation-source-code\examples\exam" />
+      <recent name="D:\projects\foundation-html5-animation-w-javascript\html5-animation-source-code\animation-react\src\Lib\utils" />
+      <recent name="D:\projects\foundation-html5-animation-w-javascript\html5-animation-source-code\animation-react\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3bb8419a-a390-491f-882e-6be4e3960fb0" name="Default Changelist" comment="" />
-      <created>1604127279853</created>
+      <changelist id="e02e03b2-3f60-47d6-92c7-66fe359e2ffc" name="Default Changelist" comment="" />
+      <created>1604275689129</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1604127279853</updated>
-      <workItem from="1604127280974" duration="149000" />
-      <workItem from="1604155565817" duration="4704000" />
-      <workItem from="1604188575690" duration="5012000" />
-      <workItem from="1604208502488" duration="4422000" />
-      <workItem from="1604410823797" duration="7341000" />
-      <workItem from="1604498661005" duration="6453000" />
-      <workItem from="1604580863216" duration="3130000" />
-      <workItem from="1604590858246" duration="25000" />
-      <workItem from="1604678101548" duration="778000" />
-      <workItem from="1604933113054" duration="1004000" />
-      <workItem from="1605275824999" duration="5214000" />
-      <workItem from="1605362240614" duration="6646000" />
-      <workItem from="1605622717999" duration="1586000" />
-      <workItem from="1605710356935" duration="11000" />
-      <workItem from="1606399773674" duration="16000" />
+      <updated>1604275689129</updated>
+      <workItem from="1604275690170" duration="20962000" />
+      <workItem from="1604360462723" duration="28826000" />
+      <workItem from="1604968418014" duration="2594000" />
+      <workItem from="1605509785629" duration="16788000" />
+      <workItem from="1606274374455" duration="8232000" />
     </task>
-    <task id="LOCAL-00001" summary="my code">
-      <created>1604127384053</created>
+    <task id="LOCAL-00001" summary="distance.html">
+      <created>1604279909480</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1604127384053</updated>
+      <updated>1604279909480</updated>
     </task>
-    <task id="LOCAL-00002" summary="my code">
-      <created>1604159232000</created>
+    <task id="LOCAL-00002" summary="distance.html">
+      <created>1604281231658</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1604159232000</updated>
+      <updated>1604281231658</updated>
     </task>
-    <task id="LOCAL-00003" summary="my code">
-      <created>1604190814922</created>
+    <task id="LOCAL-00003" summary="draw">
+      <created>1604284958335</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1604190814922</updated>
+      <updated>1604284958335</updated>
     </task>
-    <task id="LOCAL-00004" summary="my code">
-      <created>1604214260260</created>
+    <task id="LOCAL-00004" summary="draw">
+      <created>1604294681434</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1604214260260</updated>
+      <updated>1604294681434</updated>
     </task>
-    <task id="LOCAL-00005" summary="my code">
-      <created>1604216818082</created>
+    <task id="LOCAL-00005" summary="draw">
+      <created>1604361994653</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1604216818082</updated>
+      <updated>1604361994653</updated>
     </task>
-    <task id="LOCAL-00006" summary="my code">
-      <created>1604418603274</created>
+    <task id="LOCAL-00006" summary="draw">
+      <created>1604365109176</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1604418603274</updated>
+      <updated>1604365109176</updated>
     </task>
-    <task id="LOCAL-00007" summary="my code">
-      <created>1604507225354</created>
+    <task id="LOCAL-00007" summary="draw">
+      <created>1604370587858</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1604507225354</updated>
+      <updated>1604370587858</updated>
     </task>
-    <task id="LOCAL-00008" summary="my code">
-      <created>1604590868785</created>
+    <task id="LOCAL-00008" summary="draw">
+      <created>1604392686388</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1604590868785</updated>
+      <updated>1604392686388</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add animation-react ts project">
+      <created>1606265338739</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606265338739</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/master" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="my code" />
-    <option name="LAST_COMMIT_MESSAGE" value="my code" />
+    <MESSAGE value="distance.html" />
+    <MESSAGE value="draw" />
+    <MESSAGE value="add animation-react ts project" />
+    <option name="LAST_COMMIT_MESSAGE" value="add animation-react ts project" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="563" y="87" key="CommitChangelistDialog2" timestamp="1604590868026">
+    <state x="430" y="87" key="CommitChangelistDialog2" timestamp="1606265338017">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="563" y="87" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604590868026" />
-    <state x="741" y="275" key="FileChooserDialogImpl" timestamp="1605622744767">
+    <state x="430" y="87" key="CommitChangelistDialog2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1606265338017" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1604968554523">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="741" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1080.0.1080.1880@0.0.1920.1040" timestamp="1605622744767" />
-    <state x="604" y="222" key="RollbackChangesDialog" timestamp="1604214238245">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1604968554523" />
+    <state x="599" y="221" key="RollbackChangesDialog" timestamp="1604533585676">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="604" y="222" key="RollbackChangesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604214238245" />
-    <state x="553" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604590870126">
+    <state x="599" y="221" key="RollbackChangesDialog/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1604533585676" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604392687492">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="553" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604590870126" />
-    <state x="766" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604410826714">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1604392687492" />
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605509789171">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="766" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604410826714" />
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1605509789171" />
+    <state x="662" y="252" width="596" height="536" key="find.popup" timestamp="1604365086342">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="662" y="252" width="596" height="536" key="find.popup/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1604365086342" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1606268943265">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1606268943265" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606371011002">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1606371011002" />
   </component>
 </project>
