@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e02e03b2-3f60-47d6-92c7-66fe359e2ffc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/src/Lib/utils/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/src/Pages/Index/style.module.scss" afterDir="false" />
+    <list default="true" id="3bb8419a-a390-491f-882e-6be4e3960fb0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/src/Pages/test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html5-animation-source-code/animation-react/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html5-animation-source-code/animation-react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html5-animation-source-code/animation-react/src/Pages/Index/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/src/Pages/Index/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html5-animation-source-code/animation-react/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/html5-animation-source-code/animation-react/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +15,9 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
         <option value="SCSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -42,7 +37,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-assess" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="D:\projects\foundation-html5-animation-w-javascript\html5-animation-source-code\animation-react\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="E:\projects\foundation-html5-animation-w-javascript\html5-animation-source-code\animation-react\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -132,6 +127,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="distance.html" />
