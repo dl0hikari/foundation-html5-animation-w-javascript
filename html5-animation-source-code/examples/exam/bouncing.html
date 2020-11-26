@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bouncing</title>
+    <style>
+        #canvas{
+            background: #9497FF;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+        function Ball(radius) {
+            this.radius = radius;
+            this.x = 0;
+            this.y = 0;
+            this.rotation = 0;
+            this.scaleX = 1;
+            this.scaleY = 1;
+            this.color = "#f00";
+            this.lineWidth = 1;
+            this.vx = 0;
+            this.xy = 0;
+        }
+
+        Ball.prototype.draw = function(context) {
+            context.save();
+            context.translate(this.x, this.y);
+            context.rotate(this.rotation);
+            context.scale(this.scaleX, this.scaleY);
+
+            context.lineWidth = this.lineWidth;
+            context.fillStyle = this.color;
+            context.beginPath();
+            context.arc(0, 0, this.radius, 0, 2 * Math.PI, true);
+            context.closePath();
+            context.fill();
+            context.stroke();
+            context.restore();
+        }
+
+        window.onload = function() {
+            const canvas = document.getElementById('canvas'),
+                context = canvas.getContext('2d'),
+                canvasWidth = canvas.width,
+                canvasHeight = canvas.height,
+                ball = new Ball(10),
+
+                left = 0,
+                right = canvas.width,
+                top = 0,
+                bottom = canvas.height;
+
+            let vx = Math.random() * 10 - 5,
+                vy = Math.random() * 10 - 5;
+
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 2;
+
+            (function drawBall() {
+                window.requestAnimationFrame(drawBall);
+                context.clearRect(0, 0, canvasWidth, canvasHeight);
+                ball.x += vx;
+                ball.y += vy;
+
+                if(ball.x - ball.radius < left){
+                    ball.x = left + ball.radius;
+                    vx *= -1;
+                } else if (ball.x + ball.radius > right) {
+                    ball.x = right - ball.radius;
+                    vx *= -1;
+                }
+
+                if(ball.y - ball.radius < top) {
+                    ball.y = top + ball.radius;
+                    vy *= -1;
+                } else if (ball.y + ball.radius > bottom) {
+                    ball.y = bottom - ball.radius;
+                    vy *= -1;
+                }
+
+
+                ball.draw(context);
+            }())
+        }
+    </script>
+</body>
+</html>
