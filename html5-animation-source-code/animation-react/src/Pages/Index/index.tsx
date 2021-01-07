@@ -59,7 +59,7 @@ export default function Index() {
     }
 
     useEffect(() => {
-
+        console.log(mouse)
     }, [mouse])
 
     return (
