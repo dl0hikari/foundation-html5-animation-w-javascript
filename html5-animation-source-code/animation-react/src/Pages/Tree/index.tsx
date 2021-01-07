@@ -1,29 +1,39 @@
 import React, {useEffect, useRef} from "react";
 import style from "./Tree.module.scss";
+import treeImage from "./image/tree.png";
 export default function Tree() {
     const ref = useRef<HTMLCanvasElement>(null);
 
+    const draw = (context:  CanvasRenderingContext2D, num: number) => {
+        context.fillStyle = '#000000';
+        const treeImg = new Image();
+        treeImg.src = treeImage;
 
+        treeImg.onload = () => {
+            const w = treeImg.width, h = treeImg.height;
+            context.drawImage(treeImg, 0, 0, w, h , 50, 100, w, h);
+            context.fill()
+        }
+    };
 
     useEffect(() => {
         if(ref.current) {
-            const element = ref.current;
-            const context = element.getContext("2d");
-            if(context) {
-                context.beginPath();
-                context.lineWidth = 1;
-                context.strokeStyle = "green";
-                context.moveTo(50,50);
-                context.lineTo(100,100);
-                context.lineTo(50,200);
-            }
-/*            const treeImg = new Image();
-            treeImg.src="./image/tree.png";
-            treeImg.onload = () => {
+            const canvas = ref.current;
+            const context = canvas.getContext('2d');
+            let animationFrameId:number;
+            let frameCount = 0;
 
-                context?.save();
-                context?.drawImage(treeImg, 0 , 0, 100, 100);
-            }*/
+/*            const render = () => {
+                context?.clearRect(0, 0, canvas.width, canvas.height);
+                frameCount++;
+                draw(context!, frameCount)
+                animationFrameId = window.requestAnimationFrame(render);
+            }
+
+            render()*/
+            draw(context!, frameCount)
+
+            // return () => window.cancelAnimationFrame(animationFrameId);
         }
     }, [ref.current])
 
