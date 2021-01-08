@@ -1,20 +1,9 @@
 import React, {useEffect, useRef} from "react";
 import style from "./Tree.module.scss";
 import treeImage from "./image/tree.png";
+import {drawTree} from "./Utils/utils";
 export default function Tree() {
     const ref = useRef<HTMLCanvasElement>(null);
-
-    const draw = (context:  CanvasRenderingContext2D, num: number) => {
-        context.fillStyle = '#000000';
-        const treeImg = new Image();
-        treeImg.src = treeImage;
-
-        treeImg.onload = () => {
-            const w = treeImg.width, h = treeImg.height;
-            context.drawImage(treeImg, 0, 0, w, h , 50, 100, w, h);
-            context.fill()
-        }
-    };
 
     useEffect(() => {
         if(ref.current) {
@@ -31,14 +20,22 @@ export default function Tree() {
             }
 
             render()*/
-            draw(context!, frameCount)
+            const params = {
+              x1: 400,
+              y1: 300,
+              x2: 400,
+              y2: 200,
+              angle: 0.1 * Math.PI,
+              depth: 6
+            };
+            drawTree(context as CanvasRenderingContext2D, params);
 
             // return () => window.cancelAnimationFrame(animationFrameId);
         }
     }, [ref.current])
 
     return <div className={style.root}>
-        <canvas ref={ref} width={400} height={400} className={style.canvas}>
+        <canvas ref={ref} width={1200} height={600} className={style.canvas}>
             不支持canvas
         </canvas>
         <button>浇水</button>
