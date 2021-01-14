@@ -35,6 +35,8 @@ export function drawTree(ctx: CanvasRenderingContext2D, {x1, y1, x2, y2, angle, 
         x *= scale;
         y *= scale;
 
+        // matrix(a, b, c, d, e, f)
+
         let xLeft = x * Math.cos( -angle ) - y * Math.sin( -angle );
         let yLeft = x * Math.sin( -angle ) + y * Math.cos( -angle );
 
