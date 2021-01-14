@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from "react";
 import style from "./Tree.module.scss";
-import leafImage from "./image/leaf.png";
+import leafImage from "./image/leaf3.png";
 import useTree from "../../Lib/hooks/useTree";
 export default function Tree() {
     const ref = useRef<HTMLCanvasElement>(null);
@@ -17,15 +17,15 @@ export default function Tree() {
     useEffect(() => {
         // 两点间 直线方程
         if(data.length > 0) {
-            console.log("data", data);
-            const point = RandomLeaf();
-            drawLeaf(point);
+            new Array(20).fill("").map(item => {
+                const point = RandomLeaf();
+                drawLeaf(point);
+            });
         }
     }, [data]);
 
     function RandomLeaf():number[] {
         const num = Math.floor(Math.random() * data.length);
-        console.log("num", num);
         const arr = data[num];
         if(arr[0] === arr[2]) return RandomLeaf();
         const k = (arr[3] - arr[1]) / (arr[2] - arr[0]),
@@ -38,12 +38,11 @@ export default function Tree() {
     function drawLeaf(point: number[]) {
         const ctx = ref.current!.getContext('2d');
         const img = new Image();
-        console.log("point", point);
         img.src = leafImage;
         img.onload = () => {
             ctx?.save();
             ctx?.scale(0.2, 0.2);
-            ctx?.drawImage(img, point[0], point[1], img.width, img.height);
+            ctx?.drawImage(img, point[0] * 5, (point[1]  - 0.2 * img.height) * 5 , img.width, img.height);
             ctx?.restore();
         };
 
