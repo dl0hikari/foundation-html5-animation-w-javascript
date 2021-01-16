@@ -17,7 +17,7 @@ export default function Tree() {
     useEffect(() => {
         // 两点间 直线方程
         if(data.length > 0) {
-            new Array(20).fill("").map(item => {
+            new Array(100).fill("").map(item => {
                 const point = RandomLeaf();
                 drawLeaf(point);
             });
@@ -41,8 +41,11 @@ export default function Tree() {
         img.src = leafImage;
         img.onload = () => {
             ctx?.save();
-            ctx?.scale(0.2, 0.2);
-            ctx?.drawImage(img, point[0] * 5, (point[1]  - 0.2 * img.height) * 5 , img.width, img.height);
+            const random = Math.pow(-1, Math.floor(Math.random()*10));  // 随机生成正负负号 x轴以y轴翻转180deg
+            ctx?.scale(random * 0.2, 0.2);
+            const x = random * point[0] * 5;
+            const y = (point[1] - img.height * 0.2) * 5;
+            ctx?.drawImage(img, x, y, img.width, img.height);
             ctx?.restore();
         };
 
